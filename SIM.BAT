@@ -1,0 +1,6 @@
+echo Iteration fÅr Hfs-Konstanten
+:nochmal
+kedit hfs.in
+hfs
+goto nochmal
+
