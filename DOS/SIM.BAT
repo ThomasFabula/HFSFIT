@@ -1,6 +1,5 @@
-echo Iteration fÅr Hfs-Konstanten
+echo Iteration f√ºr Hfs-Konstanten
 :nochmal
 kedit hfs.in
 hfs
 goto nochmal
-
