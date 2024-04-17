@@ -3,17 +3,17 @@ program HFSFIT;
 (*                                                                   *)
 (*     PROGRAMM : HFSFIT                                             *)
 (*                                                                   *)
-(*     Prog. 1 : S. B¸ttgenbach, F. Tr‰ber  (HFSFIT.FOR)             *)
+(*     Prog. 1 : S. B√ºttgenbach, F. Tr√§ber  (HFSFIT.FOR)             *)
 (*     Prog. 2 : H. Roeder                  (HFSFIT.PAS)             *)
 (*     Prog. 3 : T. Fabula                  (PC: HFS.PAS)            *)
 (*                                                                   *)
 (*                                                                   *)
 (*     !!! ACHTUNG : !!!                                             *)
 (*     =================                                             *)
-(*     F¸r die PC-Version  i s t  unbedingt die Eingabedatei         *)
-(*     HFS.IN  nˆtig.                                                *)
+(*     F√ºr die PC-Version  i s t  unbedingt die Eingabedatei         *)
+(*     HFS.IN  n√∂tig.                                                *)
 (*     Der Output erfolgt in die Ausgabedatei  HFS.OUT !             *)
-(*     Startwerte f¸r das Programm  HFSPEK  werden in die            *)
+(*     Startwerte f√ºr das Programm  HFSPEK  werden in die            *)
 (*     Datei  HFSSPEK.PAR  geschrieben.                              *)
 (*                                                                   *)
 (*     DIESES PROGRAMM BERECHNET AUS EINGEGEBENEN MESSWERTEN         *)
@@ -120,8 +120,8 @@ const PMAX   = 14 ;         (* MAXIMAL ZAHL VON PARAMETERN + 4 *)
 
       datin  = 'HFS.IN' ;       (* Datei der Eingabeparameter  *)
       datout = 'HFS.OUT';       (*   "    "  berechneten Werte *)
-      param  = 'HFS.PAR';       (* Parameterdatei fÅr HFSFIT   *)
-      spek   = 'HFSSPEK.PAR';   (* Parameterdatei fÅr HFSSPEK  *)
+      param  = 'HFS.PAR';       (* Parameterdatei f¬År HFSFIT   *)
+      spek   = 'HFSSPEK.PAR';   (* Parameterdatei f¬År HFSSPEK  *)
 
 type REAL8 = REAL ;
      TYPE_QMATRIX = ARRAY [1..PMAX,1..PMAX] OF REAL8 ;
@@ -138,7 +138,7 @@ type REAL8 = REAL ;
      TYPE_PNAME   = ARRAY[-1..PMAX] OF PACKED ARRAY[1..10] OF CHAR ;
      str12        = string[12];
 var
-    ind,out,fout : text;   (*  File Variablen f¸r ASCII-Dateien  *)
+    ind,out,fout : text;   (*  File Variablen f√ºr ASCII-Dateien  *)
 
     CA                                        : TYPE_QMATRIX ;
     DER,DER2                                  : TYPE2_MATRIX ;
@@ -177,7 +177,7 @@ begin
              else FAKULT := N * FAKULT (N-1) ;
   end else begin
     FAKULT := 0 ;
-    writeln(#7,'Argument von FakultÑt > als 33 , kleiner NULL oder ',
+    writeln(#7,'Argument von Fakult¬Ñt > als 33 , kleiner NULL oder ',
                'nicht ganzzahlig') ;
   end ;
 end ;                                            (* end FAKULT *)
@@ -629,7 +629,7 @@ var I,J,K,FR     : INTEGER ;
 begin
 
   VARIIERT := 'variiert' ;
-  writeln(' Es wurde ein ',KOPF,' durchgefÅhrt') ;
+  writeln(' Es wurde ein ',KOPF,' durchgef¬Åhrt') ;
   WRITECHAR('-',70) ;
   writeln(' J(oben) =',XJO:6:1, '     J(unten) =',XJU:6:1,
               '      I1 =',XI1:6:1,'    I2 =' ,XI2:6:1);
@@ -670,7 +670,7 @@ begin
   end ;
   writeln;
   warten;
-  writeln(' Ausgabe der RöCKGERECHNETEN Werte und der Eingaben :') ;
+  writeln(' Ausgabe der R¬öCKGERECHNETEN Werte und der Eingaben :') ;
   WRITECHAR('-',52) ;
   writeln('              Fo    Fu            Y             ',#127,'Y',
               '          YCALC        YCALC-Y') ;
@@ -791,7 +791,7 @@ begin
   MATOUTdat(Q,R,R,6) ;
   close(out);
 
-  assign(out,spek);     (* Parameterdatei fÅr HFSSPEK *)
+  assign(out,spek);     (* Parameterdatei f¬År HFSSPEK *)
   rewrite(out);
   writeln('Parameterdatei ',spek,' wird gespeichert.');
   writeln(out,'Spektrumparameter: (Element/unt. Zust./ober. Zust./');
@@ -828,9 +828,9 @@ begin
    warten;
    writeln(' ',COMMENT ) ;
    WRITECHAR ( '=',70 ) ;
-   writeln(' Ausgabe der BERECHNETEN Frequenzen und deren IntensitÑten :') ;
+   writeln(' Ausgabe der BERECHNETEN Frequenzen und deren Intensit¬Ñten :') ;
    WRITECHAR('-',59 ) ;
-   writeln('Komp:   Fo:     Fu:           Energie:   IntensitÑt:');
+   writeln('Komp:   Fo:     Fu:           Energie:   Intensit¬Ñt:');
    writeln;
    for I := 1 TO PMAX do P[NFP[I]] := VALFP[I] ;
    for I := 1 TO ISOTOPE do begin
@@ -1060,7 +1060,7 @@ var I,J,MAX : INTEGER ;
 begin
   FLAG := TRUE ;
   clrscr;
-  writeln('Berechnung lÑuft...');
+  writeln('Berechnung l¬Ñuft...');
   gotoxy(1,1);
   { Parameter aus HFS.IN einlesen }
   assign(ind,datin);
@@ -1078,7 +1078,7 @@ begin
   if FIXED_PAR <> 0  then begin
      writeln('Es wurden folgende ',FIXED_PAR:2,' Parameter ',
                  'festgehalten :') ;
-     writeln('FIXED Parameter        Wert/VerhÑltnis   ',
+     writeln('FIXED Parameter        Wert/Verh¬Ñltnis   ',
                  '    Bezugs-Parameter') ;
      writeln ;
      for I := 1 TO FIXED_PAR do begin
@@ -1100,7 +1100,7 @@ begin
 
   N := N-1 ;
   if N >= WMAX
-    then writeln(#7,'Anzahl der Werte grî·er als erlaubtes Maximum.');
+    then writeln(#7,'Anzahl der Werte gr¬î√°er als erlaubtes Maximum.');
   close(ind);
 end ;
 
@@ -1187,9 +1187,9 @@ begin
      then element:=strx
      else element:=defaultelement;
     gotoxy(1,9);
-    writeln('Welcher öbergang soll betrachtet werden ?');
+    writeln('Welcher ¬öbergang soll betrachtet werden ?');
     gotoxy(1,10);
-    write(' öbergang von Zustand           : ',defaultvon);
+    write(' ¬öbergang von Zustand           : ',defaultvon);
     gotoxy(35,10);
     readln(strx1);
     gotoxy(1,11);
@@ -1235,7 +1235,7 @@ begin
     CHECK(NFP,REFP,VALFP,PNAME,XJO,XJU,XI1,XI2,FIXED_PAR,NISOTOP,FLAG);
     if ((XI1<=0.0) OR (XJO < 0.0) OR (XJU < 0.0) OR (XI2 < 0.0))
       then
-        writeln(#7,'Falsche Quantenzahl fÅr Kern- oder HÅllenspin.')
+        writeln(#7,'Falsche Quantenzahl f¬År Kern- oder H¬Ållenspin.')
        else if FLAG then begin
        if FIXED_PAR = NISOTOP * 5  then
          begin
